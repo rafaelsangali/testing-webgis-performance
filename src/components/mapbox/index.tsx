@@ -113,12 +113,17 @@ const MapComponent = () => {
   }, []);
 
   return (
+    <>
     <div
       ref={mapContainerRef}
       style={{ height: '100vh', width: '100%' }}
       onDrop={(e) => e.preventDefault()} // Evita comportamentos padrão de drop
       onDragOver={(e) => e.preventDefault()} // Evita comportamentos padrão de drag
-    />
+      />
+      <button id='console' type='button' onClick={() => {
+        console.log(drawRef.current?.getAll())
+      }} className='absolute z-10 top-1 left-1'>console.log</button>
+      </>
   );
 };
 
